@@ -26,6 +26,8 @@ class _secondPageState extends State<secondPage> {
   double? _width2 = 80;
   double? _width3 = 80;
   double? _width4 = 80;
+  double? _width5 = 80;
+  double? _width6 = 80;
 
   @override
   Widget build(BuildContext context) {
@@ -78,127 +80,226 @@ class _secondPageState extends State<secondPage> {
               ),
               Container(
                 color: _backgroundColor,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    GestureDetector(
-                      child: Image.asset(
-                        'repo/images/cow.png',
-                        width: _width0,
-                      ), // 너비 80의 소 사진을 가져와라
-                      onTap: () {
-                        _imagePath = 'repo/images/cow.png';
-                        // 누르면 경로를 바꾼다
-                        setState(() {
-                          if (_backgroundColor == Colors.white) {
-                            _backgroundColor = Colors.amber;
-                          } else {
-                            _backgroundColor = Colors.white;
-                          }
-                          if (_width0 == 80) {
-                            _width0 = 60;
-                          } else {
-                            _width0 = 80;
-                          }
-                        });
-                      },
-                    ),
-                    GestureDetector(
-                      child: Image.asset(
-                        'repo/images/pig.png',
-                        width: _width1,
+                child: SizedBox(
+                  height: 100,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      GestureDetector(
+                        child: Image.asset(
+                          'repo/images/cow.png',
+                          width: _width0,
+                        ), // 너비 80의 소 사진을 가져와라
+                        onTap: () {
+                          _imagePath = 'repo/images/cow.png';
+                          // 누르면 경로를 바꾼다
+                          setState(() {
+                            if (_backgroundColor == Colors.white) {
+                              _backgroundColor = Colors.amber;
+                            } else {
+                              _backgroundColor = Colors.white;
+                            }
+                            if (_width0 == 80) {
+                              _width0 = 60;
+                            } else {
+                              _width0 = 80;
+                            }
+                          });
+                        },
                       ),
-                      onTap: () {
-                        _imagePath = 'repo/images/pig.png';
-                        setState(() {
-                          if (_backgroundColor == Colors.white) {
-                            _backgroundColor = Colors.amber;
-                          } else {
-                            _backgroundColor = Colors.white;
-                          }
-                          if (_width1 == 80) {
-                            _width1 = 60;
-                          } else {
-                            _width1 = 80;
-                          }
-                        });
-                      },
-                    ),
-                    GestureDetector(
-                      child: Image.asset(
-                        'repo/images/bee.png',
-                        width: _width2,
+                      GestureDetector(
+                        child: Image.asset(
+                          'repo/images/pig.png',
+                          width: _width1,
+                        ),
+                        onTap: () {
+                          _imagePath = 'repo/images/pig.png';
+                          setState(() {
+                            if (_backgroundColor == Colors.white) {
+                              _backgroundColor = Colors.amber;
+                            } else {
+                              _backgroundColor = Colors.white;
+                            }
+                            if (_width1 == 80) {
+                              _width1 = 60;
+                            } else {
+                              _width1 = 80;
+                            }
+                          });
+                        },
                       ),
-                      onTap: () {
-                        _imagePath = 'repo/images/bee.png';
-                        setState(() {
-                          if (_backgroundColor == Colors.white) {
-                            _backgroundColor = Colors.amber;
-                          } else {
-                            _backgroundColor = Colors.white;
-                          }
-                          if (_width2 == 80) {
-                            _width2 = 60;
-                          } else {
-                            _width2 = 80;
-                          }
-                        });
-                      },
-                    ),
-                    GestureDetector(
-                      child: Image.asset(
-                        'repo/images/cat.png',
-                        width: _width3,
+                      GestureDetector(
+                        child: Image.asset(
+                          'repo/images/bee.png',
+                          width: _width2,
+                        ),
+                        onTap: () {
+                          _imagePath = 'repo/images/bee.png';
+                          setState(() {
+                            if (_backgroundColor == Colors.white) {
+                              _backgroundColor = Colors.amber;
+                            } else {
+                              _backgroundColor = Colors.white;
+                            }
+                            if (_width2 == 80) {
+                              _width2 = 60;
+                            } else {
+                              _width2 = 80;
+                            }
+                          });
+                        },
                       ),
-                      onTap: () {
-                        _imagePath = 'repo/images/cat.png';
-                        setState(() {
-                          if (_backgroundColor == Colors.white) {
-                            _backgroundColor = Colors.amber;
-                          } else {
-                            _backgroundColor = Colors.white;
-                          }
-                          if (_width3 == 80) {
-                            _width3 = 60;
-                          } else {
-                            _width3 = 80;
-                          }
-                        });
-                      },
-                    ),
-                    GestureDetector(
-                      child: Image.asset(
-                        'repo/images/dog.png',
-                        width: _width4,
+                      GestureDetector(
+                        child: Image.asset(
+                          'repo/images/cat.png',
+                          width: _width3,
+                        ),
+                        onTap: () {
+                          _imagePath = 'repo/images/cat.png';
+                          setState(() {
+                            if (_backgroundColor == Colors.white) {
+                              _backgroundColor = Colors.amber;
+                            } else {
+                              _backgroundColor = Colors.white;
+                            }
+                            if (_width3 == 80) {
+                              _width3 = 60;
+                            } else {
+                              _width3 = 80;
+                            }
+                          });
+                        },
                       ),
-                      onTap: () {
-                        _imagePath = 'repo/images/dog.png';
-                        setState(() {
-                          if (_backgroundColor == Colors.white) {
-                            _backgroundColor = Colors.amber;
-                          } else {
-                            _backgroundColor = Colors.white;
-                          }
-                          if (_width4 == 80) {
-                            _width4 = 60;
-                          } else {
-                            _width4 = 80;
-                          }
-                        });
-                      },
-                    ),
-                  ],
+                      GestureDetector(
+                        child: Image.asset(
+                          'repo/images/dog.png',
+                          width: _width4,
+                        ),
+                        onTap: () {
+                          _imagePath = 'repo/images/dog.png';
+                          setState(() {
+                            if (_backgroundColor == Colors.white) {
+                              _backgroundColor = Colors.amber;
+                            } else {
+                              _backgroundColor = Colors.white;
+                            }
+                            if (_width4 == 80) {
+                              _width4 = 60;
+                            } else {
+                              _width4 = 80;
+                            }
+                          });
+                        },
+                      ),
+                      GestureDetector(
+                        child: Image.asset(
+                          'repo/images/fox.png',
+                          width: _width5,
+                        ),
+                        onTap: () {
+                          _imagePath = 'repo/images/dog.png';
+                          setState(() {
+                            if (_backgroundColor == Colors.white) {
+                              _backgroundColor = Colors.amber;
+                            } else {
+                              _backgroundColor = Colors.white;
+                            }
+                            if (_width5 == 80) {
+                              _width5 = 60;
+                            } else {
+                              _width5 = 80;
+                            }
+                          });
+                        },
+                      ),
+                      GestureDetector(
+                        child: Image.asset(
+                          'repo/images/monkey.png',
+                          width: _width6,
+                        ),
+                        onTap: () {
+                          _imagePath = 'repo/images/dog.png';
+                          setState(() {
+                            if (_backgroundColor == Colors.white) {
+                              _backgroundColor = Colors.amber;
+                            } else {
+                              _backgroundColor = Colors.white;
+                            }
+                            if (_width6 == 80) {
+                              _width6 = 60;
+                            } else {
+                              _width6 = 80;
+                            }
+                          });
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
               ElevatedButton(
-                child: const Text('동물 추가하기'),
-                onPressed: () {},
+                child: const Text('동물 추가하기'), // 버튼 제목은 동물 추가하기
+                onPressed: () {
+                  // 눌렀을 때
+                  var animal = Animal(
+                    // animalItem의 Animal리스트에 다음 형식으로 추가한다
+                    animalName: nameController.value.text,
+                    // 키보드로 입력된 값을 텍스트 형태로
+                    kind: getKind(_radioValue),
+                    // getKind라는 함수에 의해 0,1,2에 맞는 텍스트를 반환
+                    imagePath: _imagePath,
+                    // 이미지 선택 시 초기화된 _imagePath를 사용
+                    flyExist: flyExist,
+                    // 체크박스에서 초기화된 flyExist를 사용
+                  );
+                  AlertDialog dialog = AlertDialog(
+                    title: const Text('동물 추가하기'),
+                    //알림창 띄움. 내용은 동물 추가하기
+                    content: Text(
+                      '이 동물은 ${animal.animalName}입니다.\n'
+                      '또 동물의 종류는 ${animal.kind}입니다.\n 이 동물을 추가하시겠습니까?',
+                      style: const TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
+                    actions: [
+                      ElevatedButton(
+                        onPressed: () {
+                          widget.list?.add(animal);
+                          Navigator.of(context).pop;
+                        },
+                        child: const Text('예'),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pop;
+                        },
+                        child: const Text('아니요'),
+                      ),
+                    ],
+                  );
+
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) => dialog);
+                },
               ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  getKind(int? radioValue) {
+    switch (radioValue) {
+      case 0:
+        return "양서류";
+      case 1:
+        return "파충류";
+      case 2:
+        return "포유류";
+    }
   }
 
   _radioChange(int? value) {
