@@ -10,8 +10,9 @@ void main() {
 
 class tabApp extends StatelessWidget {
   static const String _title = "tabApp";
-  //
+
   const tabApp({super.key});
+  //
 
   @override
   Widget build(BuildContext context) {
@@ -60,14 +61,6 @@ class _mainTabAppState extends State<mainTabApp>
   }
 
   @override
-  @SemanticsHintOverrides()
-  void dispose() {
-    controller!.dispose();
-    super.dispose();
-    //메모리 누수를 막기위해 위젯 상태관리 종료
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -84,7 +77,7 @@ class _mainTabAppState extends State<mainTabApp>
         controller: controller,
         children: [
           firstPage(list: animalList),
-          const secondPage(),
+          secondPage(list: animalList),
         ],
       ),
       bottomNavigationBar: TabBar(
@@ -107,5 +100,12 @@ class _mainTabAppState extends State<mainTabApp>
         controller: controller,
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    controller?.dispose();
+    super.dispose();
+    //메모리 누수를 막기위해 위젯 상태관리 종료
   }
 }

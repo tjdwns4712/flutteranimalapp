@@ -117,23 +117,21 @@ class _secondPageState extends State<secondPage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Radio(
-                            value: 0, // 해다이 라디오 인덱스의 값
-                            groupValue: _radioValue, // 현재 선택된 값
-                            onChanged:
-                                _radioChange, // 눌렀을 때 호출할 함수 현재 선택값을 해당 라디오 인덱스 값으로 바꿔준다
-                          ),
+                              value: 0, // 해다이 라디오 인덱스의 값
+                              groupValue: _radioValue, // 현재 선택된 값
+                              onChanged: _radioChange
+                              // 눌렀을 때 호출할 함수 현재 선택값을 해당 라디오 인덱스 값으로 바꿔준다
+                              ),
                           const Text('양서류'),
                           Radio(
-                            value: 1,
-                            groupValue: _radioValue,
-                            onChanged: _radioChange,
-                          ),
+                              value: 1,
+                              groupValue: _radioValue,
+                              onChanged: _radioChange),
                           const Text('파충류'),
                           Radio(
-                            value: 2,
-                            groupValue: _radioValue,
-                            onChanged: _radioChange,
-                          ),
+                              value: 2,
+                              groupValue: _radioValue,
+                              onChanged: _radioChange),
                           const Text('포유류'),
                         ],
                       ),
@@ -325,7 +323,7 @@ class _secondPageState extends State<secondPage> {
                             width: _width5,
                           ),
                           onTap: () {
-                            _imagePath = 'repo/images/dog.png';
+                            _imagePath = 'repo/images/fox.png';
                             setState(() {
                               if (_backgroundColor == Colors.black12) {
                                 _backgroundColor = Colors.amber;
@@ -349,7 +347,7 @@ class _secondPageState extends State<secondPage> {
                             width: _width6,
                           ),
                           onTap: () {
-                            _imagePath = 'repo/images/dog.png';
+                            _imagePath = 'repo/images/monkey.png';
                             setState(() {
                               if (_backgroundColor == Colors.black12) {
                                 _backgroundColor = Colors.amber;
@@ -397,7 +395,7 @@ class _secondPageState extends State<secondPage> {
                           // animalItem의 Animal리스트에 다음 형식으로 추가한다
                           animalName: nameController.value.text,
                           // 키보드로 입력된 값을 텍스트 형태로
-                          kind: getKind(_radioValue),
+                          kind: getKind(_radioValue!),
                           // getKind라는 함수에 의해 0,1,2에 맞는 텍스트를 반환
                           imagePath: _imagePath,
                           // 이미지 선택 시 초기화된 _imagePath를 사용
@@ -464,7 +462,13 @@ class _secondPageState extends State<secondPage> {
     );
   }
 
-  getKind(int? radioValue) {
+  _radioChange(int? value) {
+    setState(() {
+      _radioValue = value!;
+    });
+  }
+
+  getKind(int radioValue) {
     switch (radioValue) {
       case 0:
         return "양서류";
@@ -473,11 +477,5 @@ class _secondPageState extends State<secondPage> {
       case 2:
         return "포유류";
     }
-  }
-
-  _radioChange(int? value) {
-    setState(() {
-      _radioValue = value;
-    });
   }
 }
