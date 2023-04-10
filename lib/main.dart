@@ -10,6 +10,7 @@ void main() {
 
 class tabApp extends StatelessWidget {
   static const String _title = "tabApp";
+  //
   const tabApp({super.key});
 
   @override
@@ -70,27 +71,36 @@ class _mainTabAppState extends State<mainTabApp>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('List Example'),
+        backgroundColor: Colors.blueGrey,
+        title: const Text(
+          'AnimalApp',
+          style: TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
       ),
       body: TabBarView(
         controller: controller,
-        children: <Widget>[
+        children: [
           firstPage(list: animalList),
           const secondPage(),
         ],
       ),
       bottomNavigationBar: TabBar(
+        labelColor: Colors.white,
+        dividerColor: Colors.white,
         tabs: const <Tab>[
           Tab(
             icon: Icon(
               Icons.looks_one,
-              color: Colors.blue,
+              color: Colors.blueGrey,
             ),
           ),
           Tab(
             icon: Icon(
               Icons.looks_two,
-              color: Colors.blue,
+              color: Colors.blueGrey,
             ),
           ),
         ],
