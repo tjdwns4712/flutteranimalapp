@@ -1,11 +1,11 @@
 import 'package:animalapp/pages/firstPage.dart';
 import 'package:animalapp/pages/secondPage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
 import './animalItem.dart';
+import 'cupertinoMain.dart';
 
 void main() {
-  runApp(const tabApp());
+  runApp(const cupertionMain());
 }
 
 class tabApp extends StatelessWidget {
