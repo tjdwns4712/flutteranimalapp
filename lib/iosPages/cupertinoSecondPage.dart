@@ -86,7 +86,7 @@ class _cupertinoSecondPageState extends State<cupertinoSecondPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
-                height: 120,
+                height: 100,
               ),
               Container(
                 decoration: BoxDecoration(
